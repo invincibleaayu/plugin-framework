@@ -232,3 +232,4 @@ fabric.properties
 .idea/
 ./plu
 plugin_config_path/*
+.ruff_cache
