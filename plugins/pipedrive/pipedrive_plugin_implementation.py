@@ -6,13 +6,13 @@ class PipedrivePluginImplementation:
         pass
 
     @hookimpl
-    async def sync_contact(args):
+    def sync_contact(self, args):
+        print(args, "i am pipedrive")
+
+    @hookimpl
+    def sync_call_log(self, args):
         ...
 
     @hookimpl
-    async def sync_call_log(args):
-        ...
-
-    @hookimpl
-    async def manage_call(args):
+    def manage_call(self, args):
         ...

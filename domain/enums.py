@@ -7,6 +7,9 @@ class CRMName(Enum):
     PIPEDRIVE = "pipedrive"
     SLACK = "slack"
 
+    class Config:
+        use_enum_value = True
+
 
 class GrantType(Enum):
     AUTHORIZATION_CODE = "authorization_code"
