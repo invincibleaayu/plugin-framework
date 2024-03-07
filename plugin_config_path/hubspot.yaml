@@ -1,0 +1,17 @@
+base_oauth_url: "https://api.hubapi.com/oauth/v1"
+token_endpoint: "token"
+auth_url: "https://app.hubspot.com/oauth/authorize"
+client_id: "dummy-client-id-123456"
+client_secret: "dummy-client-secret-abcdef"
+redirect_uri: "http://localhost:8000/oauth/callback?integration=hubspot"
+user_info_url: "https://api.hubapi.com/owners/v2/owners"
+base_url: "https://api.hubapi.com/crm/v3"
+sync_entities:
+  contacts: "objects/contacts"
+revoke_url: "https://api.hubapi.com/oauth/v1/refresh-tokens"
+periods: 10
+calls: 100
+query_params:
+  client_id: "dummy-client-id-123456"
+  redirect_uri: "http://localhost:8000/oauth/callback?integration=hubspot"
+  scopes: "cms.domains.read cms.domains.write crm.objects.contacts.read crm.objects.contacts.write crm.schemas.contacts.read crm.schemas.contacts.write crm.objects.owners.read"
