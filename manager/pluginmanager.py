@@ -7,7 +7,6 @@ from plugins.pipedrive.pipedrive_plugin_implementation import (
 from plugin_specification_marker.hookspec import BaseHookSpecifications
 from uuid import UUID
 from domain.enums import CRMName
-import copy
 
 
 class PluginManager:
@@ -27,11 +26,10 @@ class PluginManager:
             self.pm.register(self.plugin_implementations[crm])
 
     def run_hooks(self, selected_plugins: list):
-        pm_instance = copy.deepcopy(self.pm)
-        for plugin in pm_instance.get_plugins():
-            print(f"Plugin name{plugin.__class__}")
-            if plugin.__class__ in selected_plugins:
-                pm_instance.unregister(plugin)
-        pm_instance.hook.sync_contact(args="contact")
-        print("running all ")
-        self.pm.hook.sync_contact(args="contact")
+        caller = self.pm.subset_hook_caller(
+            name="sync_contact",
+            remove_plugins=[
+                p for p in self.pm.get_plugins() if p.__class__ not in selected_plugins
+            ],
+        )
+        caller(args="contact")
