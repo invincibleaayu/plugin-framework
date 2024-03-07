@@ -1,0 +1,17 @@
+base_oauth_url: "https://oauth.pipedrive.com/oauth"
+token_endpoint: "token"
+auth_url: "https://oauth.pipedrive.com/oauth/authorize"
+client_id: "dummy-client-id-987654"
+client_secret: "dummy-client-secret-zyxwvu"
+redirect_uri: "http://localhost:8000/settings?integration=pipedrive"
+user_info_url: "https://company-sandbox7.pipedrive.com/api/v1/users/me"
+base_url: "https://api.pipedrive.com/v1"
+sync_entities:
+  persons: "persons"
+  call_logs: "calls"
+periods: 2
+calls: 80
+query_params:
+  client_id: "dummy-client-id-987654"
+  redirect_uri: "http://localhost:8000/settings?integration=pipedrive"
+revoke_url: "https://oauth.pipedrive.com/oauth/revoke"
